@@ -21,3 +21,10 @@ else if (isEvening)
 {
     welcomeMessage.textContent = "Good Evening"
 }
+
+
+
+// secret message
+
+localStorage.setItem('It\'s a secret to everybody.', 'This is my super secret message. Don\'t share it, or else...')
+
