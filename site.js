@@ -23,12 +23,9 @@
 // }
 
 
-
 // // secret message
 
 // localStorage.setItem('It\'s a secret to everybody.', 'This is my super secret message. Don\'t share it, or else...')
-
-
 
 
 
@@ -75,3 +72,42 @@ setInterval(() => {
     showImages()
 }, 5000)
 
+
+
+/* // -------
+// --- To Do List ---
+// -------
+
+// get list from local storage
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+
+// create consts
+const todoList = document.getElementById('todo-list')
+const input = document.getElementById('new-todo')
+const addButton = document.getElementById('add-todo')
+
+// create/add list items
+const renderTodos = () => {
+    // clear li's before we recreate them
+    todoList.innerHTML = ''
+    // loop through list of items and create li elements
+    todos.forEach(todo => {
+        const li = document.createElement('li')
+        li.textContent = todo.text
+        li.className = 'todo'
+        todoList.append(li)
+    })
+}
+
+// add event listener to the button
+addButton.addEventListener('click', () => {
+    if (input.value.trim() !== '') {
+        todos.push({ text: input.value, completed: false })
+        localStorage.setItem('todo-list', JSON.stringify(todos))
+        
+        input.value = ''
+        renderTodos()
+    }
+})
+
+renderTodos() */
